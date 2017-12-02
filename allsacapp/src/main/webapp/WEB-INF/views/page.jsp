@@ -5,6 +5,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css/"></spring:url>
+
 <spring:url var="js" value="/resources/js/"></spring:url>
 <spring:url var="images" value="/resources/images/"></spring:url>
 
@@ -24,9 +25,19 @@ Licence URI: http://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link href="${css}/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all">
+
+<link href="${css}/viewproducts.css" rel="stylesheet" type="text/css"
+	media="all">
+	
+<link href="${css}/live_update.css" rel="stylesheet" type="text/css"
+	media="all">
 <link href="${css}/layout.css" rel="stylesheet" type="text/css"
 	media="all">
 <style type="text/css">
+ 
 /* DEMO ONLY */
 .container .demo {
 	text-align: center;
@@ -77,11 +88,23 @@ Licence URI: http://www.os-templates.com/template-terms
 	<%@include file="content1.jsp"%>
 	</c:if>
 	
-	
+	<c:if test="${userClickliveupdate == true }">
+	<%@include file="live_update.jsp"%>
+	</c:if>
 	
 	<c:if test="${userClickgallery == true }">
 	<%@include file="gallery.jsp"%>
 	</c:if>
+	
+	
+	<c:if test="${userClickvideos == true }">
+	<%@include file="videos.jsp"%>
+	</c:if>
+	
+	<c:if test="${userClickviewproducts == true or userClickviewspecproducts == true}">
+	<%@include file="viewproducts.jsp"%>
+	</c:if>
+	
 	
 	<!-- footer -->
 	<%@include file="./shared/footer1.jsp"%>

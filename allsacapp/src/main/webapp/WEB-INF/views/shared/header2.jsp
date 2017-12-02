@@ -2,10 +2,12 @@
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">videos</a></li>
+				<li><a href="${contextRoot}/content1">Home</a></li>
+				<li><a href="${contextRoot}/videos">videos</a></li>
 				<li><a href="#">news</a></li>
-				<li><a href="#">live</a></li>
+				<li><a href="${contextRoot}/live_update">live</a></li>
+				
+				
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>

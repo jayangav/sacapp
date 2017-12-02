@@ -11,27 +11,38 @@
 				</div>
 				<nav id="mainav" class="fl_right">
 					<ul class="clear">
-						<li><a href="${contextRoot}/content1">Home</a></li>
-						<li class="active"><a class="drop" href="#">Pages</a>
+						<li><a href="${contextRoot}/content1">About</a></li>
+						<li class="active"><a class="drop" href="#">Admissions</a>
 							<ul>
-								<li><a href="${contextRoot}/gallery">Gallery</a></li>
-								<li><a href="${contextRoot}/page1">page1</a></li>
-								<li><a href="${contextRoot}/page2">page2</a></li>
-								<li><a href="${contextRoot}/page3">page3</a></li>
-								<li class="active"><a href="basic-grid.html">Basic Grid</a></li>
+								<li><a href="${contextRoot}/gallery">Grade 1</a></li>
+								<li><a href="${contextRoot}/page1">Grade 6</a></li>
+								<li><a href="${contextRoot}/page2">Grade 12</a></li>
+								<li><a href="${contextRoot}/page3">Other</a></li>
+								
 							</ul></li>
-						<li><a class="drop" href="#">Dropdown</a>
+						
+						<li class="active"><a class="drop" href="#">Sports</a>
 							<ul>
-								<li><a href="#">Level 2</a></li>
-								<li><a class="drop" href="#">Level 2 + Drop</a>
-									<ul>
-										<li><a href="#">Level 3</a></li>
-										<li><a href="#">Level 3</a></li>
-										<li><a href="#">Level 3</a></li>
-									</ul></li>
-								<li><a href="#">Level 2</a></li>
-							</ul></li>
-						<li><a href="#">Link Text</a></li>
+								<li><a href="${contextRoot}/gallery">Cricket</a></li>
+								<li><a href="${contextRoot}/page1">Football</a></li>
+								<li><a href="${contextRoot}/page2">Rugby</a></li>
+								<li><a href="${contextRoot}/page3">Hockey</a></li>
+								<li><a href="${contextRoot}/page3">Basketball</a></li>
+								<li><a href="${contextRoot}/page3">Swimming</a></li>
+								<li><a href="${contextRoot}/page3">Other</a></li>
+								
+							</ul>
+						
+						 </li>
+						
+						
+						
+						<li><a class="drop" href="${contextRoot}/viewproducts">Shop Products</a>
+						<!-- displaying products -->
+						<%@include file="display_products.jsp"%>
+						
+						</li>
+						
 						<li><a href="#">Login</a></li>
 					</ul>
 				</nav>

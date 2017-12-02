@@ -238,7 +238,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#D3B48D;}
 .row0, .row0 a{}
 .row1, .row1 a{}
 .row2, .row2 a{}
-.row3{color:#797979; background-color:#FFFFFF;}
+.row3{color:#797979; background-color:#212529;}
 .row4{color:#A6A6A6; background-color:#151517;}
 .row5, .row5 a{color:#A6A6A6; background-color:#26272B;}
 
@@ -362,3 +362,4 @@ table a, #comments a{background-color:inherit;}
 
 	#breadcrumb{text-align:left;}
 }
+

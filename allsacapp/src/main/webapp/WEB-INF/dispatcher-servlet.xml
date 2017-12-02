@@ -14,6 +14,8 @@
    
    <context:component-scan base-package="jay.first.allsacapp.controller"></context:component-scan>
    
+    <context:component-scan base-package="jay.first.sacbackend.daoimpl"></context:component-scan>
+   
    <bean id = "viewresolver"
    		class= "org.springframework.web.servlet.view.InternalResourceViewResolver">
    		

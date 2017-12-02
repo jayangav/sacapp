@@ -1,12 +1,21 @@
 package jay.first.allsacapp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import jay.first.sacbackend.dao.productDAO;
+import jay.first.sacbackend.dto.product;
 
 @Controller
 
 public class pagecontroller {
+	
+	
+	@Autowired
+	private productDAO prdao;
 	
 	@RequestMapping(value = {"/","/home","/index"})
 	
@@ -14,6 +23,9 @@ public class pagecontroller {
 		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","home");
+		
+		mv.addObject("products", prdao.list());
+		
 		mv.addObject("userClickHome","true");
 		return mv;
 		
@@ -34,11 +46,38 @@ public class pagecontroller {
 		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","Gallery");
+		mv.addObject("products", prdao.list());
 		mv.addObject("userClickgallery",true);
 		return mv;
 		
 		
 }	
+
+
+@RequestMapping(value = {"/live_update"})
+
+public ModelAndView live_update() {
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title","LIVE");
+	mv.addObject("userClickliveupdate",true);
+	return mv;
+	
+	
+}	
+
+
+@RequestMapping(value = {"/videos"})
+
+public ModelAndView videos() {
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title","VIDEO");
+	mv.addObject("userClickvideos",true);
+	return mv;
+	
+	
+}
 
 
 @RequestMapping(value = {"/content1"})
@@ -51,6 +90,74 @@ public ModelAndView content1() {
 	return mv;
 
 }
+
+// method to load all the products
+
+@RequestMapping(value = {"/all/products"})
+
+public ModelAndView show_products() {
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title","All Products");
+	mv.addObject("products", prdao.list());
+	
+	mv.addObject("userClickallproducts",true);
+	return mv;
+	
+	
+}	
+
+
+@RequestMapping(value = {"/viewproducts"})
+
+public ModelAndView viewproduct() {
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title","All Products");
+	mv.addObject("products", prdao.list());
+	mv.addObject("userClickviewproducts",true);
+	return mv;
+	
+	
+}	
+
+//
+//@RequestMapping(value = "/{product_name}")
+//
+//public ModelAndView show_spec_product(@PathVariable("product_name") String product_name) {
+//	
+//	product product = null;
+//	product = prdao.get(product_name);
+//	
+//	ModelAndView mv = new ModelAndView("page");
+//	//mv.addObject("title",product.getProduct_name());
+//	mv.addObject("products", prdao.list());
+//	mv.addObject("product", product);
+//	mv.addObject("userClickviewspecproducts",true);
+//	return mv;
+//	
+//	
+//}	
+
+
+
+@RequestMapping(value = "/{id}")
+
+public ModelAndView show_spec_product(@PathVariable("id") int id) {
+	
+	product product = null;
+	product = prdao.getn(id);
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title",product.getProduct_name());
+	mv.addObject("products", prdao.list());
+	mv.addObject("product", product);
+	mv.addObject("userClickviewspecproducts",true);
+	return mv;
+	
+	
+}	
+
 
 }
 

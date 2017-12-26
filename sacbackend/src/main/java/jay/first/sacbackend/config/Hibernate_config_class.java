@@ -14,7 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "jay.first.sacbackend.dto" })
+@ComponentScan(basePackages = {"jay.first.sacbackend.dto"})
 @EnableTransactionManagement
 
 public class Hibernate_config_class {
@@ -26,7 +26,7 @@ public class Hibernate_config_class {
 	private final static String DATABASE_PASSWORD = "";
 
 	@Bean
-	private DataSource getDataSource() {
+	public DataSource getDataSource() {
 
 		BasicDataSource dataSource = new BasicDataSource();
 
@@ -57,14 +57,13 @@ public class Hibernate_config_class {
 	
 	//all the hibernate properties will retunrd in this metod
 	private Properties getHibernateProperties() {
-		// TODO Auto-generated method stub
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 		
 		
-		return null;
+		return properties;
 	}
 	
 	// transactionmanager bean

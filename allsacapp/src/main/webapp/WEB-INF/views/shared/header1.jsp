@@ -22,7 +22,7 @@
 							</ul></li>
 						
 						<li class="active"><a class="drop" href="#">Sports</a>
-							<ul>
+							<%-- <ul>
 								<li><a href="${contextRoot}/gallery">Cricket</a></li>
 								<li><a href="${contextRoot}/page1">Football</a></li>
 								<li><a href="${contextRoot}/page2">Rugby</a></li>
@@ -31,7 +31,9 @@
 								<li><a href="${contextRoot}/page3">Swimming</a></li>
 								<li><a href="${contextRoot}/page3">Other</a></li>
 								
-							</ul>
+							</ul> --%>
+						<%@include file="display_sports.jsp"%>
+						
 						
 						 </li>
 						

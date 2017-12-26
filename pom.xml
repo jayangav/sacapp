@@ -7,6 +7,21 @@
   <version>1.0-SNAPSHOT</version>
   <name>allsacapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+	
+	
+	
+	  <repositories>
+      <repository>
+        <id>anotheria</id>
+        <url>http://nexus.anotheria.net/nexus/content/groups/public </url>
+        <releases>
+          <enabled>true</enabled>
+        </releases>
+       <snapshots>
+          <enabled>true</enabled>
+        </snapshots>
+      </repository>
+    </repositories>
   
   <properties>
   

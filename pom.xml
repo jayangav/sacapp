@@ -9,19 +9,16 @@
   <url>http://maven.apache.org</url>
 	
 	
-	
-	  <repositories>
-      <repository>
-        <id>anotheria</id>
-        <url>http://nexus.anotheria.net/nexus/content/groups/public </url>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-       <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </repository>
-    </repositories>
+	<repositories>
+  <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/libs-milestone</url>
+      <snapshots>
+          <enabled>false</enabled>
+      </snapshots>
+  </repository>
+</repositories>
   
   <properties>
   
